@@ -2,264 +2,207 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Anatomy & Physiology Sem 1-6 - Functional</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anatomy & Physiology - Aesthetic Functional</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
 <style>body{font-family:'Plus Jakarta Sans',sans-serif}</style>
 </head>
 <body class="bg-[#0a0a0a] text-white">
-<header class="sticky top-0 z-30 bg-[#0a0a0a] border-b border-zinc-800 p-4 flex justify-between">
-<div><h1 class="font-bold">Anatomy & Physiology 🧬</h1><p id="headSub" class="text-[11px] text-zinc-500">Sem 1-6 • Click any chapter</p></div>
-<button onclick="showTab('settings')" class="bg-zinc-800 px-3 py-1.5 rounded-full text-sm">⚙️ Settings</button>
-</header>
-
-<div class="flex gap-2 p-3 overflow-x-auto sticky top-[65px] bg-[#0a0a0a] z-20 border-b border-zinc-900">
-<button onclick="showTab('learn')" id="btn-learn" class="tabBtn bg-white text-black px-4 py-2 rounded-full text-sm font-bold">Learn</button>
-<button onclick="showTab('quiz')" id="btn-quiz" class="tabBtn bg-zinc-800 px-4 py-2 rounded-full text-sm">Quiz</button>
-<button onclick="showTab('flash')" id="btn-flash" class="tabBtn bg-zinc-800 px-4 py-2 rounded-full text-sm">Flashcards</button>
-<button onclick="showTab('friends')" id="btn-friends" class="tabBtn bg-zinc-800 px-4 py-2 rounded-full text-sm">Friends</button>
-<button onclick="showTab('chat')" id="btn-chat" class="tabBtn bg-zinc-800 px-4 py-2 rounded-full text-sm">Chats</button>
-<button onclick="showTab('settings')" id="btn-settings" class="tabBtn bg-zinc-800 px-4 py-2 rounded-full text-sm">Settings</button>
+<div class="sticky top-0 z-20 bg-[#0a0a0a]/95 backdrop-blur p-4 border-b border-zinc-800 flex justify-between items-center">
+<div><h1 class="font-bold text-[17px]">Anatomy & Physiology 🧬</h1><p class="text-[11px] text-zinc-500">Sem 1-6 • Visual • Fun • Tap to Explore • All clicks work</p></div>
+<button onclick="document.getElementById('tab-settings').scrollIntoView();showTab('settings')" class="bg-zinc-800 w-9 h-9 rounded-full">⚙️</button>
 </div>
 
-<div id="tab-learn" class="tab p-4">
-<div class="flex gap-2 mb-4 overflow-x-auto">
-<button onclick="filterSem('all')" class="sBtn bg-violet-600 px-3 py-1 rounded-full text-xs" id="s-all">All</button>
-<button onclick="filterSem('1')" class="sBtn bg-zinc-800 px-3 py-1 rounded-full text-xs" id="s-1">Sem1</button>
-<button onclick="filterSem('2')" class="sBtn bg-zinc-800 px-3 py-1 rounded-full text-xs" id="s-2">Sem2</button>
-<button onclick="filterSem('3')" class="sBtn bg-zinc-800 px-3 py-1 rounded-full text-xs" id="s-3">Sem3</button>
-<button onclick="filterSem('4')" class="sBtn bg-zinc-800 px-3 py-1 rounded-full text-xs" id="s-4">Sem4</button>
-<button onclick="filterSem('5')" class="sBtn bg-zinc-800 px-3 py-1 rounded-full text-xs" id="s-5">Sem5</button>
-<button onclick="filterSem('6')" class="sBtn bg-zinc-800 px-3 py-1 rounded-full text-xs" id="s-6">Sem6</button>
+<div class="flex gap-2 p-3 overflow-x-auto sticky top-[64px] bg-[#0a0a0a] z-10 border-b border-zinc-900">
+<button onclick="showTab('learn')" id="b-learn" class="bg-white text-black px-5 py-2 rounded-full text-sm font-bold">Learn</button>
+<button onclick="showTab('quiz')" id="b-quiz" class="bg-zinc-800 px-5 py-2 rounded-full text-sm">Quiz</button>
+<button onclick="showTab('flash')" id="b-flash" class="bg-zinc-800 px-5 py-2 rounded-full text-sm">Flashcards</button>
+<button onclick="showTab('friends')" id="b-friends" class="bg-zinc-800 px-5 py-2 rounded-full text-sm">Friends</button>
+<button onclick="showTab('chat')" id="b-chat" class="bg-zinc-800 px-5 py-2 rounded-full text-sm">Chats</button>
+<button onclick="showTab('settings')" id="b-settings" class="bg-zinc-800 px-5 py-2 rounded-full text-sm">Settings</button>
+</div>
+
+<div id="tab-learn" class="p-4">
+<div class="flex gap-2 mb-4 overflow-x-auto pb-2">
+<button onclick="filterS('all')" id="f-all" class="bg-violet-600 px-4 py-1.5 rounded-full text-xs font-bold">All Sem</button>
+<button onclick="filterS('1')" id="f-1" class="bg-zinc-800 px-4 py-1.5 rounded-full text-xs">Sem 1</button>
+<button onclick="filterS('2')" id="f-2" class="bg-zinc-800 px-4 py-1.5 rounded-full text-xs">Sem 2</button>
+<button onclick="filterS('3')" id="f-3" class="bg-zinc-800 px-4 py-1.5 rounded-full text-xs">Sem 3</button>
+<button onclick="filterS('4')" id="f-4" class="bg-zinc-800 px-4 py-1.5 rounded-full text-xs">Sem 4</button>
+<button onclick="filterS('5')" id="f-5" class="bg-zinc-800 px-4 py-1.5 rounded-full text-xs">Sem 5</button>
+<button onclick="filterS('6')" id="f-6" class="bg-zinc-800 px-4 py-1.5 rounded-full text-xs">Sem 6</button>
 </div>
 <div id="grid" class="grid gap-3"></div>
 </div>
 
-<div id="tab-quiz" class="tab hidden p-4"><div id="quizBox" class="bg-zinc-900 border border-zinc-800 p-5 rounded-2xl"></div></div>
-<div id="tab-flash" class="tab hidden p-4"><div id="flashBox" class="grid gap-3"></div></div>
-
-<div id="tab-friends" class="tab hidden p-4 space-y-4">
-<div class="bg-zinc-900 border border-zinc-800 p-4 rounded-2xl">
-<p class="font-bold text-sm">🔍 Add Friend by Nickname</p>
-<div class="flex gap-2 mt-3"><input id="searchInput" class="flex-1 bg-zinc-800 p-3 rounded-xl text-sm" placeholder="type friend nickname e.g. ree"><button onclick="addBySearch()" class="bg-white text-black px-5 rounded-xl font-bold text-sm">Add</button></div>
-<p class="text-[11px] text-zinc-500 mt-2">No server needed - works offline. Type any nickname and Add.</p>
+<div id="tab-quiz" class="hidden p-4"><div id="quizBox" class="bg-zinc-900 border border-zinc-800 p-6 rounded-[24px]"></div></div>
+<div id="tab-flash" class="hidden p-4"><div id="flashBox" class="grid gap-3"></div></div>
+<div id="tab-friends" class="hidden p-4 space-y-3">
+<div class="bg-zinc-900 border border-zinc-800 p-4 rounded-2xl"><p class="font-bold text-sm">🔍 Add Friend (offline works)</p><div class="flex gap-2 mt-3"><input id="sInput" class="flex-1 bg-zinc-800 p-3 rounded-xl text-sm" placeholder="nickname e.g. ree"><button onclick="addF()" class="bg-white text-black px-5 rounded-xl font-bold text-sm">Add</button></div></div>
+<div class="bg-zinc-900 border border-zinc-800 p-4 rounded-2xl"><p class="font-bold text-sm">My Friends</p><div id="fList" class="mt-3 text-xs text-zinc-500">No friends yet</div></div>
 </div>
-<div class="bg-zinc-900 border border-zinc-800 p-4 rounded-2xl">
-<p class="font-bold text-sm">My QR Code</p>
-<div id="myQr" class="bg-white p-3 rounded-xl w-fit mt-3"></div>
-<p id="qrLabel" class="text-xs text-zinc-500 mt-2"></p>
-<button onclick="startScan()" class="w-full bg-violet-600 py-3 rounded-xl font-bold mt-3">📷 Scan Friend QR</button>
-<div id="reader" class="mt-3 hidden"></div>
+<div id="tab-chat" class="hidden p-4 space-y-3">
+<div class="bg-zinc-900 border border-zinc-800 p-4 rounded-2xl"><p class="font-bold text-sm">Group: Anatomy Squad 💬</p><div id="gMsgs" class="h-[300px] overflow-y-auto bg-black rounded-xl p-3 mt-2 text-sm space-y-2"></div><div class="flex gap-2 mt-2"><input id="gInput" class="flex-1 bg-zinc-800 p-3 rounded-xl text-sm" placeholder="Doubt?"><button onclick="sendG()" class="bg-violet-600 px-5 rounded-xl font-bold">Send</button></div></div>
+<div class="bg-zinc-900 border border-zinc-800 p-4 rounded-2xl"><p class="font-bold text-sm">Private: <span id="pWith" class="text-violet-400">Select friend</span></p><div id="pMsgs" class="h-[300px] overflow-y-auto bg-black rounded-xl p-3 mt-2 text-sm space-y-2"></div><div class="flex gap-2 mt-2"><input id="pInput" class="flex-1 bg-zinc-800 p-3 rounded-xl text-sm" placeholder="Message..."><button onclick="sendP()" class="bg-white text-black px-5 rounded-xl font-bold">Send</button></div></div>
 </div>
-<div class="bg-zinc-900 border border-zinc-800 p-4 rounded-2xl"><p class="font-bold text-sm">My Friends</p><div id="friendsList" class="mt-3"></div></div>
+<div id="tab-settings" class="hidden p-4">
+<div class="bg-zinc-900 border border-zinc-800 p-5 rounded-2xl"><h2 class="font-bold">Settings ⚙️</h2><p class="text-xs text-zinc-500 mt-1">Nickname OPTIONAL - only for Friends/Chat display. App works without it.</p><input id="nInput" class="w-full bg-zinc-800 border border-zinc-700 p-3 rounded-xl mt-4" placeholder="Optional nickname e.g. ree123"><button onclick="saveN()" class="w-full bg-white text-black py-3 rounded-xl font-bold mt-3">Save Nickname</button><p id="idShow" class="text-[11px] text-zinc-600 mt-3 font-mono"></p></div>
 </div>
 
-<div id="tab-chat" class="tab hidden p-4 space-y-4">
-<div class="bg-zinc-900 border border-zinc-800 p-3 rounded-2xl"><p class="font-bold text-sm">Group: Anatomy Squad</p><div id="groupMsgs" class="h-[300px] overflow-y-auto bg-black p-3 rounded-xl mt-2 mb-2 text-sm space-y-2"></div><div class="flex gap-2"><input id="groupInput" class="flex-1 bg-zinc-800 p-3 rounded-xl text-sm" placeholder="Type group message..."><button onclick="sendGroup()" class="bg-violet-600 px-5 rounded-xl font-bold">Send</button></div></div>
-<div class="bg-zinc-900 border border-zinc-800 p-3 rounded-2xl"><p class="font-bold text-sm">Private Chat: <span id="privateWith" class="text-violet-400">Select friend in Friends tab</span></p><div id="privateMsgs" class="h-[300px] overflow-y-auto bg-black p-3 rounded-xl mt-2 mb-2 text-sm space-y-2"></div><div class="flex gap-2"><input id="privateInput" class="flex-1 bg-zinc-800 p-3 rounded-xl text-sm" placeholder="Private message..."><button onclick="sendPrivate()" class="bg-white text-black px-5 rounded-xl font-bold">Send</button></div></div>
+<div id="modal" style="display:none" class="fixed inset-0 bg-black/90 p-4 z-50 overflow-y-auto">
+<div class="bg-zinc-900 border border-zinc-800 max-w-3xl mx-auto rounded-[28px] p-6 mt-4">
+<button onclick="document.getElementById('modal').style.display='none'" class="float-right bg-zinc-800 px-4 py-1.5 rounded-full text-xs">Close ✕</button>
+<div id="mContent"></div>
 </div>
-
-<div id="tab-settings" class="tab hidden p-4">
-<div class="bg-zinc-900 border border-zinc-800 p-5 rounded-2xl">
-<h2 class="font-bold">Settings ⚙️</h2>
-<p class="text-xs text-zinc-500 mt-1">Nickname is OPTIONAL. App works without it. Set only to show your name to friends.</p>
-<input id="nickInput" class="w-full bg-zinc-800 border border-zinc-700 p-3 rounded-xl mt-4" placeholder="Optional nickname e.g. ree123">
-<button onclick="saveNick()" class="w-full bg-white text-black py-3 rounded-xl font-bold mt-3">Save Nickname</button>
-<p class="text-xs text-zinc-600 mt-4">ID: <span id="myIdShow" class="text-violet-400 font-mono"></span></p>
-<p id="nickShow" class="text-xs mt-1"></p>
-</div>
-</div>
-
-<div id="modal" class="fixed inset-0 bg-black/80 hidden p-4 z-50 overflow-y-auto">
-<div class="bg-zinc-900 border border-zinc-800 max-w-2xl mx-auto rounded-[24px] p-6"><button onclick="document.getElementById('modal').classList.add('hidden')" class="float-right bg-zinc-800 px-3 py-1 rounded-full text-xs">Close X</button><div id="modalContent"></div></div>
 </div>
 
 <script>
+var myId = localStorage.getItem('myId') || 'stu_'+Math.random().toString(36).substr(2,5);
+localStorage.setItem('myId',myId);
+var myNick = localStorage.getItem('nick')||'';
+var selFriend = null;
+var curSem='all';
+var qi=0;
 var chapters=[
-{sem:1,t:"Cell - Unit of Life",e:"🧬",c:"bg-pink-500",short:"37T cells! Membrane gate, Mito powerhouse.",vis:"<div class='bg-black border border-zinc-800 rounded-xl p-3 text-center'><div class='w-40 h-28 border-2 border-pink-400 rounded-full mx-auto relative'><div class='absolute top-2 left-4 w-10 h-10 bg-violet-500 rounded-full text-[8px] flex items-center justify-center'>Nucleus DNA</div><div class='absolute bottom-3 right-6 w-12 h-5 bg-yellow-400 rounded-full text-[8px] text-black flex items-center justify-center'>Mito ATP</div></div><p class='text-[10px] text-zinc-500 mt-3'>Phospholipid bilayer semi-permeable</p></div>",exp:"Cell is basic unit. Membrane protects controls entry, Cytoplasm jelly with organelles, Nucleus brain with DNA. Your body makes 2M RBC per sec! Fun: DNA of one cell 2m long.",pts:["Membrane: phospholipid bilayer + protein = security gate","Mitochondria: powerhouse ATP, own DNA, more in muscle","Nucleus: brain, chromosomes 46 (23 pairs)","Ribosome: protein factory, RER rough SER smooth","Transport: Passive diffusion no energy, Active Na/K pump needs ATP","Clinical: Mito disease low energy, Cancer uncontrolled division"]},
-{sem:1,t:"Tissues - 4 Types",e:"🧫",c:"bg-orange-500",short:"Epithelial covers, Connective connects, Muscular moves, Nervous controls.",vis:"<div class='grid grid-cols-3 gap-2 text-[10px] text-center'><div class='bg-black border border-zinc-800 p-3 rounded-xl'>⬜ Flat<br>Squamous<br>Alveoli</div><div class='bg-black border border-zinc-800 p-3 rounded-xl'>🟦 Cube<br>Cuboidal<br>Kidney</div><div class='bg-black border border-zinc-800 p-3 rounded-xl'>▬ Tall<br>Columnar<br>Intestine</div></div>",exp:"Tissue = similar cells same function. 4 types. Epithelial covers surfaces.",pts:["Simple 1 layer absorption","Stratified many layers protection skin","Connective blood bone cartilage fat","Tight junction seals gap communication","Glands exocrine duct endocrine no duct","Clinical: Carcinoma epithelial, Sarcoma connective"]},
-{sem:1,t:"Skeletal - 206 Bones",e:"🦴",c:"bg-zinc-200 text-black",short:"Axial 80 + Appendicular 126 = 206. Femur longest strongest.",vis:"<div class='bg-black border border-zinc-800 p-3 rounded-xl text-[10px] font-mono'>Long Bone<br>Epiphysis spongy + red marrow makes blood<br>Metaphysis growth plate<br>Diaphysis shaft compact + yellow marrow<br>Periosteum outer covering pain sensitive</div>",exp:"Skeleton shape support protection blood calcium store. Axial central 80, Appendicular limbs 126.",pts:["Osteoblast builds, Osteoclast breaks, Osteocyte maintains","Red marrow makes blood sternum pelvis","Calcium + Vit D + exercise strong bone","Axial skull spine ribs, Appendicular limbs","Joints fibrous immovable, synovial free movable","Clinical: Osteoporosis fracture risk"]},
-{sem:1,t:"Muscular System",e:"💪",c:"bg-red-500",short:"Actin thin + Myosin thick slide = contraction. Needs Ca++ & ATP.",vis:"<div class='bg-black border border-zinc-800 p-3 rounded-xl'><div class='flex gap-2 items-center'><div class='h-4 w-20 bg-blue-400 rounded text-[8px] text-black flex items-center justify-center'>ACTIN</div><div>🔗</div><div class='h-4 w-20 bg-red-400 rounded text-[8px] flex items-center justify-center'>MYOSIN</div></div><p class='text-[9px] text-zinc-500 mt-2'>Ca++ binds troponin, tropomyosin moves, myosin head pulls, sarcomere shortens</p></div>",exp:"Muscle converts chemical ATP to mechanical movement. 3 types.",pts:["Skeletal voluntary striated multinucleated","Cardiac involuntary heart intercalated discs","Smooth involuntary organs spindle","Sliding filament myosin pulls actin","Needs calcium + ATP","Motor unit = 1 neuron + fibers"]},
-{sem:2,t:"Heart - 4 Chambers",e:"❤️",c:"bg-red-600",short:"Double circulation, Lub AV valves, Dub SL valves, SA node 60-100.",vis:"<div class='bg-black border border-zinc-800 p-3 rounded-xl grid grid-cols-2 gap-2 text-[10px] text-center'><div class='bg-red-950 p-2 rounded'>RA DeO2 Body</div><div class='bg-red-950 p-2 rounded'>LA O2 Lungs</div><div class='bg-red-900 p-2 rounded font-bold'>RV → Lungs</div><div class='bg-red-900 p-2 rounded font-bold'>LV → Body thickest</div></div>",exp:"Heart fist size 300g pumps 5L/min 7000L/day 100k beats/day. Right to lungs, left to body.",pts:["SA node pacemaker AV node delay Bundle His Purkinje","ECG P atrial QRS ventricular T repolarization","Blood plasma 55% cells 45% RBC WBC Platelets","ABO Rh groups antigen antibody","Lub AV valves Dub SL valves","Clinical: MI block, HTN >140/90"]},
-{sem:2,t:"Blood Vessels",e:"🩸",c:"bg-rose-500",short:"Artery away thick high pressure, Vein towards thin valves.",vis:"<div class='flex gap-2 text-[9px]'><div class='flex-1 bg-red-950 border border-red-800 p-2 rounded-xl text-center'>ARTERY thick elastic high pressure deep no valves</div><div class='flex-1 bg-blue-950 border border-blue-800 p-2 rounded-xl text-center'>VEIN thin low pressure valves superficial</div></div>",exp:"Artery away from heart, Vein towards, Capillary 1 cell exchange.",pts:["Artery TIE intima media externa","Vein valves muscle pump","Capillary continuous fenestrated sinusoid","Lymph drains 2-3L/day","Spleen filters blood","Varicose valve failure edema"]},
-{sem:2,t:"Respiratory",e:"🫁",c:"bg-sky-500",short:"480M alveoli, tidal 500ml, surfactant prevents collapse.",vis:"<div class='bg-black border border-zinc-800 p-3 rounded-xl text-[10px]'>Nose → Pharynx → Larynx voice → Trachea C-rings → Bronchi → Alveoli grapes<br>Diaphragm main muscle 75% breathing<br>Type2 surfactant prevents collapse</div>",exp:"Ventilation breathing + exchange alveoli blood + tissue + cellular.",pts:["Tidal 500 IRV 3000 ERV 1100 VC 4500","Inspiration active expiration passive","Hemoglobin 4 O2 per Hb S-curve","CO2 70% bicarbonate","Control medulla pons chemoreceptors","Asthma COPD pneumonia"]},
-{sem:3,t:"Digestive - 9m Tube",e:"🍔",c:"bg-yellow-400 text-black",short:"Mouth to anus 9m, liver 1.5kg largest gland.",vis:"<div class='bg-black border border-zinc-800 p-2 rounded-xl text-[10px] leading-5'>Mouth amylase → Esophagus peristalsis 8s → Stomach HCl pH2 pepsin → Duodenum bile lipase → Jejunum villi absorb → Colon water</div>",exp:"Mechanical chewing + chemical enzymes. Villi increase area 600x.",pts:["Liver bile emulsify glycogen detox albumin","Pancreas amylase trypsin lipase insulin","Villi microvilli lacteal fat","Peristalsis wave segmentation mix","Teeth 32 incisors canine premolar molar","Peptic ulcer H pylori"]},
-{sem:3,t:"Kidney & Nephron",e:"🫘",c:"bg-amber-600",short:"Filters 180L/day makes 1.5L urine, GFR 125ml/min.",vis:"<div class='bg-black border border-zinc-800 p-3 rounded-xl text-[9px] font-mono'>Glomerulus filter → Bowman's<br>PCT 65% reabsorb → Loop Henle concentrate → DCT fine → CD ADH → Urine</div>",exp:"Kidney regulates water electrolytes pH BP RBC Vit D. 1M nephrons.",pts:["GFR 125 180L filtered 99% reabsorbed","PCT brush border 65%","Loop countercurrent multiplier","DCT PTH Aldosterone","CD ADH water","Stone calcium oxalate UTI"]},
-{sem:4,t:"Endocrine - Hormones",e:"🧠",c:"bg-purple-500",short:"Pituitary master in sella, feedback thermostat.",vis:"<div class='bg-black border border-zinc-800 p-2 rounded-xl text-[10px]'>Hypothalamus → Pituitary → Thyroid T3 T4 metabolism, Adrenal cortisol stress, Pancreas insulin sugar, Gonads sex<br>Negative feedback high inhibits</div>",exp:"Ductless into blood slow long lasting vs nervous fast short.",pts:["Thyroid iodine goiter T3 T4 metabolism","Insulin lowers glucagon raises diabetes","Cortisol stress glucose","ADH water diabetes insipidus","Oxytocin love labour milk","Negative 99% positive labour clotting"]},
-{sem:4,t:"Nervous - Brain",e:"🧩",c:"bg-indigo-500",short:"86B neurons signal 120m/s via myelin.",vis:"<div class='bg-black border border-zinc-800 p-3 rounded-xl flex gap-1 text-[9px] text-center'><div class='bg-violet-900 p-2 rounded'>Dendrite receives</div><div>→</div><div class='bg-indigo-900 p-2 rounded'>Axon sends myelin</div><div>→</div><div class='bg-zinc-800 p-2 rounded'>Synapse NT</div></div>",exp:"CNS brain spinal, PNS 12 cranial 31 spinal. Neuron receives sends chemical.",pts:["Multipolar bipolar unipolar","Synapse Ca++ NT EPSP IPSP","Myelin Oligo CNS Schwann PNS Node Ranvier 120m/s","Frontal decision parietal sensation temporal hearing occipital vision","CSF 150ml cushion choroid plexus","Sympathetic fight flight Para rest digest"]},
-{sem:5,t:"Eye & Ear",e:"👁️",c:"bg-cyan-400 text-black",short:"Rods 120M night, Cones 6M color fovea, stapes 3mm smallest.",vis:"<div class='grid grid-cols-2 gap-2 text-[9px]'><div class='bg-black border border-zinc-800 p-2 rounded-xl'>Eye: Cornea 2/3 focus Lens 1/3 Rods night Cones color fovea sharpest</div><div class='bg-black border border-zinc-800 p-2 rounded-xl'>Ear: Pinna Ossicles 22x Cochlea hearing Vestibule balance</div></div>",exp:"Eye focuses inverted retina, Ear converts sound electric.",pts:["Myopia long concave Hyperopia short convex","Rods night Cones color fovea","Stapes smallest 3mm malleus incus","Cochlea hair cells tonotopy","Vestibular otoliths balance","Cataract glaucoma otitis deafness"]},
-{sem:5,t:"Reproductive",e:"👶",c:"bg-fuchsia-500",short:"Sperm daily 64 days, egg monthly, fertilization ampulla.",vis:"<div class='bg-black border border-zinc-800 p-2 rounded-xl text-[9px]'>Day1-5 mens, 6-13 follicular estrogen ↑, 14 ovulation LH surge fertile, 15-28 luteal progesterone</div>",exp:"Testes sperm testosterone, Ovary egg estrogen progesterone.",pts:["Spermatogenesis 64d Sertoli Leydig","Semen seminal 60% fructose prostate 30%","Female cycle follicular ovulation luteal","Estrogen female progesterone pregnancy","Fertilization acrosome cortical reaction","Placenta nutrition barrier IgG"]},
-{sem:6,t:"Applied & Homeostasis",e:"⚡",c:"bg-lime-400 text-black",short:"Keeps BP 120/80 sugar 80-100 temp 37 pH 7.4 via feedback.",vis:"<div class='bg-black border border-zinc-800 p-3 rounded-xl text-[10px]'>High BP → baroreceptor → brain → low HR → normal<br>High sugar → insulin → normal<br>Low temp → shivering → heat → normal</div>",exp:"Homeostasis constant internal despite external. Negative 99% brings back, Positive amplifies until endpoint.",pts:["BP short baroreceptor long kidney RAAS","Negative feedback thermostat Positive labour","HTN >140/90 silent killer stroke MI","Diabetes >126 fasting Type1 no insulin Type2 resistant","Shock low BP inadequate perfusion","Fever high set point pyrogens"]},
+{sem:1,t:"Cell - The Living Factory",e:"🧬",c:"bg-gradient-to-br from-pink-500 to-fuchsia-600",short:"Your body has 37 trillion cells! Each is a tiny factory.",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-5'><p class='text-[11px] font-bold text-pink-400 tracking-widest'>DIAGRAM - ANIMAL CELL</p><div class='mt-4 flex justify-center'><div class='relative w-64 h-36 border-2 border-pink-400/80 rounded-full'><div class='absolute -top-2 left-8 bg-violet-600 px-3 py-1 rounded-full text-[9px] font-bold'>NUCLEUS DNA 🧠 Brain</div><div class='absolute top-1/2 -left-2 bg-blue-500 px-2 py-1 rounded-full text-[8px]'>Ribosome Factory</div><div class='absolute bottom-2 right-10 bg-yellow-400 text-black px-3 py-1 rounded-full text-[9px] font-bold'>Mito ATP ⚡ Powerhouse</div><div class='absolute top-8 right-6 w-2 h-2 bg-green-400 rounded-full animate-pulse'></div></div></div><p class='text-[10px] text-zinc-500 mt-6 text-center'>Phospholipid bilayer = Security gate • Semi-permeable • Proteins as doors</p></div>",exp:"Imagine your body is a city, cell is the house! 37.2 trillion houses. Each house has: Outer wall (membrane) = security gate only allows selected people, Jelly inside (cytoplasm) = with machines (organelles), Control room (nucleus) = has blueprint DNA. Fun: If you stretch DNA of ONE cell, it's 2 meters long! You make 2 million new blood cells per second.",pts:["Membrane: Phospholipid bilayer + proteins = security gate model, only selected entry","Mitochondria: Powerhouse makes ATP energy currency, has own DNA, more in muscle heart","Nucleus: Brain, has chromosomes 46 (23 pairs), nucleolus makes ribosome","Transport: Passive high to low no energy (diffusion osmosis), Active low to high needs ATP Na/K pump","Ribosome: Protein factory, RER rough makes protein, SER smooth makes lipid detox","Clinical: Cancer = uncontrolled division, Mito disease = fatigue low energy"],trick:"PMR - Powerhouse Mito, Manufacturing Ribosome, Regulation Nucleus"},
+{sem:1,t:"Tissues - Team Work",e:"🧫",c:"bg-gradient-to-br from-orange-400 to-amber-600",short:"Same cells doing same work = Tissue. 4 teams only!",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-4'><p class='text-[11px] font-bold text-orange-400'>4 TYPES VISUAL</p><div class='grid grid-cols-2 gap-2 mt-3 text-[10px]'><div class='bg-zinc-900 border border-zinc-800 p-3 rounded-xl text-center'><div class='text-lg'>🧱🧱🧱</div><b>Epithelial</b><br>Covers surfaces<br>Protection + absorption</div><div class='bg-zinc-900 border border-zinc-800 p-3 rounded-xl text-center'><div class='text-lg'>🔗</div><b>Connective</b><br>Connects supports<br>Blood Bone Fat</div><div class='bg-zinc-900 border border-zinc-800 p-3 rounded-xl text-center'><div class='text-lg'>💪</div><b>Muscular</b><br>Moves body<br>Contracts</div><div class='bg-zinc-900 border border-zinc-800 p-3 rounded-xl text-center'><div class='text-lg'>⚡</div><b>Nervous</b><br>Controls<br>Conducts impulse</div></div></div>",exp:"Tissue = group of similar cells doing same job, like same department in office. Epithelial = covering team (skin, intestine lining), Connective = support team (blood, bone, fat, cartilage), Muscular = movement team, Nervous = control team. Basement membrane glues epithelium to connective.",pts:["Simple epithelium 1 layer: Alveoli lungs, intestine for absorption","Stratified many layers: Skin protection from wear tear","Connective most diverse: Blood fluid, Bone hard, Cartilage semi-hard, Fat adipose","Tight junction seals, Gap junction communication","Exocrine via duct salivary, Endocrine no duct thyroid into blood","Carcinoma epithelial cancer, Sarcoma connective cancer"],trick:"ECMN - Epithelial Covering, Connective Connecting, Muscular Moving, Nervous Networking"},
+{sem:1,t:"Skeletal - Your 206 Bones",e:"🦴",c:"bg-gradient-to-br from-zinc-100 to-zinc-300 text-black",short:"Axial 80 (centre) + Appendicular 126 (limbs) = 206. Femur strongest.",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-4 font-mono text-[10px]'><p class='font-sans font-bold text-zinc-300 tracking-widest text-[11px]'>LONG BONE CUT SECTION</p><div class='mt-3 border-l-2 border-zinc-600 pl-3 leading-7 text-zinc-300'>Epiphysis - Ends - Spongy bone + Red marrow → Makes blood<br>Articular cartilage → Reduces friction<br>Metaphysis - Growth plate → Increases length in kids<br>Diaphysis - Shaft - Compact bone + Yellow marrow fat<br>Periosteum - Outer fibrous → Has osteoblasts → Pain sensitive!</div><div class='mt-4 flex gap-2 font-sans'><span class='bg-green-900/50 border border-green-800 px-2 py-1 rounded-full'>Osteoblast Builds</span><span class='bg-red-900/50 border border-red-800 px-2 py-1 rounded-full'>Osteoclast Eats</span></div></div>",exp:"Skeleton = your body's scaffolding! 4 functions: Shape + Protection (skull protects brain, ribs heart lungs) + Blood making in red marrow + Calcium store. Axial = central pole 80 bones, Appendicular = hanging limbs 126. Long bones grow from cartilage via endochondral ossification. Flat bones skull from membrane via intramembranous.",pts:["Osteoblast builds new bone, Osteoclast breaks old (remodeling), Osteocyte mature maintains","Red marrow in sternum pelvis vertebra in adult makes blood, Yellow stores fat","Calcium + Vit D + Exercise + Sex hormones = strong bone","Joints: Fibrous skull immovable, Cartilaginous spine slight, Synovial knee free movable fluid","Bone types Long femur, Short carpals, Flat skull, Irregular vertebra","Osteoporosis low density fracture, Greenstick fracture kids"],trick:"206 = Skull 22 + Ear 6 + Hyoid 1 + Vertebrae 26 + Ribs 24 + Sternum 1 + 64 upper + 62 lower"},
+{sem:1,t:"Muscles - Sliding Filaments",e:"💪",c:"bg-gradient-to-br from-red-500 to-orange-600",short:"Actin + Myosin slide over each other = you move!",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-4'><p class='text-[11px] font-bold text-red-400'>SLIDING FILAMENT - HOW YOU MOVE</p><div class='mt-4 flex items-center justify-center gap-2'><div class='bg-blue-500 h-6 w-24 rounded-full flex items-center justify-center text-[8px] font-bold text-black'>ACTIN Thin</div><div class='text-xl'>🤝</div><div class='bg-red-500 h-6 w-24 rounded-full flex items-center justify-center text-[8px] font-bold'>MYOSIN Thick Head</div></div><div class='mt-4 bg-zinc-900 p-3 rounded-xl text-[10px] leading-5'>Step 1: Nerve → Ca++ released from SR<br>Step 2: Ca++ binds Troponin → Tropomyosin moves away<br>Step 3: Myosin head grabs actin<br>Step 4: Power stroke uses ATP → Sarcomere shortens → Muscle contracts!</div></div>",exp:"Muscle converts chemical ATP to movement. 3 types: Skeletal voluntary you control striated multinucleated attached to bone via tendon, Cardiac involuntary only heart branched intercalated discs gap junctions fast conduction no fatigue, Smooth involuntary organs spindle slow sustained peristalsis. Motor unit = 1 neuron + fibers it controls.",pts:["Skeletal voluntary striated multinucleated fatigues","Cardiac involuntary branched intercalated discs gap junctions no fatigue","Smooth involuntary spindle single nucleus organs slow","Sarcomere Z to Z functional unit, A band same, H I decrease on contraction","Needs Calcium from SR + ATP for power stroke detachment","Myasthenia gravis antibodies destroy ACh receptors weakness"],trick:"OIA - Origin fixed, Insertion moves, Action work. MRS - Myosin thick, Actin thin"},
+{sem:2,t:"Heart - 4 Chambers Pump",e:"❤️",c:"bg-gradient-to-br from-red-600 to-pink-600",short:"Pumps 7000L/day! Right to lungs, left to body.",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-4'><p class='text-[11px] font-bold text-red-400'>HEART FLOW - DOUBLE CIRCULATION</p><div class='grid grid-cols-2 gap-2 mt-3 text-[10px] text-center'><div class='bg-red-950/80 border border-red-800 p-3 rounded-xl'>RA<br>DeO2 from body<br>SVC IVC<br>→ Tricuspid → RV</div><div class='bg-red-950/80 border border-red-800 p-3 rounded-xl'>LA<br>O2 from lungs<br>Pulmonary veins<br>→ Bicuspid → LV</div><div class='bg-gradient-to-br from-red-900 to-red-800 border border-red-600 p-3 rounded-xl font-bold'>RV → Lungs via Pulmonary Artery (DeO2)</div><div class='bg-gradient-to-br from-red-900 to-red-800 border border-red-600 p-3 rounded-xl font-bold'>LV → Body via Aorta (O2) Wall THICKEST</div></div><p class='text-[9px] text-zinc-500 mt-3 text-center'>Lub = AV valves close, Dub = SL valves close • SA node → AV node (0.1s delay) → His → Purkinje</p></div>",exp:"Heart = fist size 300g, pumps 5L/min, 7000L/day, beats 100k/day! Right side dirty blood to lungs for O2, left side clean blood to whole body. Septum no mixing. Pericardium cover. Cardiac output = HR 72 x SV 70ml = 5L. SA node natural pacemaker 60-100/min, AV node delay ensures atria contract first.",pts:["Conduction SA → AV delay → Bundle His → Purkinje → ventricles","ECG P atrial depolarization QRS ventricular T ventricular repolarization","Blood plasma 55% proteins albumin globulin fibrinogen + cells 45% RBC 5M 120 days Hb 4 O2","ABO Rh groups: A has A antigen B antibody, AB universal recipient O universal donor","Cardiac cycle systole ejection diastole filling","MI heart attack coronary block, HTN >140/90 silent killer"],trick:"Never Trust Aorta Pulmonary Valve - Tricuspid Right 3 cusps, Bicuspid Left 2 cusps. SA node 60-100"},
+{sem:2,t:"Vessels & Lymph - Highways",e:"🩸",c:"bg-gradient-to-br from-rose-500 to-red-700",short:"Artery away thick, Vein towards thin valves, Capillary 1 cell exchange.",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-4 flex gap-3 text-[10px]'><div class='flex-1 bg-red-950 border border-red-800 p-3 rounded-xl'><b class='text-red-300'>ARTERY</b><br>Wall THICK<br>Tunica intima media externa<br>High pressure Deep<br>No valves Pulse felt<br>Carries O2 except pulmonary</div><div class='flex-1 bg-blue-950 border border-blue-800 p-3 rounded-xl'><b class='text-blue-300'>VEIN</b><br>Wall THIN<br>Large lumen<br>Low pressure Superficial<br>HAS VALVES<br>Carries DeO2 except pulmonary</div></div><div class='mt-3 bg-zinc-800 p-2 rounded-xl text-[10px] text-center'>Capillary 1 cell thick 8 micron RBC single file • 10 billion capillaries! • Site of exchange</div>",exp:"Arteries take away from heart (A away), Veins bring towards heart. Capillaries where O2 food waste exchange via diffusion. Lymph drains extra 2-3L/day back to blood filters via lymph nodes swelling = infection. Spleen largest lymph filters blood stores RBC platelets.",pts:["Artery TIE intima endothelium media smooth muscle elastic externa connective","Vein thin large lumen valves muscle pump respiratory pump helps return","Capillary continuous brain, fenestrated pores kidney, sinusoid large gaps liver","Lymph 2-3L/day thoracic duct left right lymphatic duct → subclavian vein","Lymph nodes filter swelling infection, spleen filters blood, MALT mucosa","Varicose valve failure tortuous, Edema low protein lymph block"],trick:"Artery Away Vein Towards. TIE - Intima Endothelium Media Muscle Externa connective"},
+{sem:2,t:"Lungs - 480M Alveoli",e:"🫁",c:"bg-gradient-to-br from-sky-400 to-blue-600",short:"480 million alveoli = tennis court area! Surfactant prevents collapse.",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-4 text-[10px] leading-6'><p class='font-bold text-sky-400'>RESPIRATORY TREE</p>Nose warms 37C filters humidifies → Pharynx common → Larynx voice box vocal cords → Trachea 12cm 16-20 C-rings → Bronchi Right wider shorter vertical (foreign body goes right!) → Bronchioles no cartilage smooth muscle → Alveoli 480M 70 sq m<br><br><div class='flex gap-2'><span class='bg-zinc-800 px-2 py-1 rounded-full'>Type1 flat exchange</span><span class='bg-yellow-900/30 border border-yellow-700 px-2 py-1 rounded-full'>Type2 surfactant</span><span class='bg-green-900/30 border border-green-700 px-2 py-1 rounded-full'>Macrophage dust</span></div></div>",exp:"Respiration 4 steps: Ventilation breathing in out + external alveoli blood exchange + internal blood tissue + cellular mitochondria O2 use. Surfactant dipalmitoyl lecithin made by Type2 reduces surface tension prevents collapse during expiration - absent in premature RDS. Diaphragm main 75% breathing phrenic nerve C3-5 keeps diaphragm alive!",pts:["Tidal 500ml IRV 3000 ERV 1100 Residual 1200 VC 4500 Total 6000 Dead space 150","Inspiration active diaphragm contracts volume up pressure down air in, expiration passive","Hemoglobin 4 heme 1g Hb 1.34ml O2 15g per 100ml 20ml O2 S-curve high affinity lungs low tissues","CO2 70% bicarbonate 20% carbamino 7% dissolved chloride shift","Control medulla rhythmicity pons apneustic pneumotaxic chemoreceptors central CO2 peripheral O2","Asthma bronchoconstriction wheezing, COPD emphysema alveoli destroyed, Pneumonia fluid"],trick:"TIRE - Tidal 500 IRV 3L Residual 1.2L ERV 1.1L. Right bronchus wider shorter vertical foreign body right"},
+{sem:3,t:"Digestive - 9m Journey",e:"🍔",c:"bg-gradient-to-br from-yellow-400 to-orange-500 text-black",short:"Mouth to anus 9 meters! Liver 1.5kg largest gland.",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-4 text-white text-[10px] leading-6'><p class='font-bold text-yellow-400'>FOOD JOURNEY 24-72 HOURS</p>Mouth Teeth 32 chewing + Saliva amylase ptyalin starch maltose lysozyme 1.5L/day<br>Esophagus 25cm Peristalsis wave 8-10 sec 3 constrictions<br>Stomach 1.5L Fundus Body Antrum Pylorus 3 muscle layers HCl pH2 Pepsin protein Mucus protects<br>Duodenum 25cm C-shaped Bile emulsifies fat + Pancreas amylase trypsin lipase bicarbonate alkaline<br>Jejunum Villi 600x area absorbs via blood fat via lacteal lymph</div>",exp:"Digestion mechanical chewing churning segmentation + chemical enzymes break big to small. Liver largest gland right hypochondrium makes bile stored gallbladder emulsifies fat stores glycogen detox makes albumin clotting factors Kupffer phagocytosis. Pancreas both exocrine enzymes and endocrine insulin glucagon. Villi finger projections lacteal for fat increase area 600x!",pts:["Mouth 32 teeth incisors 8 canine 4 premolar 8 molar 12 salivary parotid submandibular sublingual","Stomach parietal HCl + Intrinsic factor B12 chief pepsinogen mucous mucus G gastrin","Liver 4 lobes portal triad hepatic artery portal vein bile duct functions bile glycogen detox albumin","Pancreas exocrine acini 98% amylase trypsin lipase bicarbonate pH8 endocrine islets alpha glucagon beta insulin","Small intestine villi microvilli brush border lactase sucrase maltase peptidase active transport","Peptic ulcer HCl H pylori, Gallstone cholesterol, Jaundice bilirubin, Cirrhosis fibrosis"],trick:"MESA JDICR - Mouth Esophagus Stomach Duodenum Jejunum Ileum Colon Rectum. Bile NO enzyme only emulsifies"},
+{sem:3,t:"Kidney - Filters 180L Daily",e:"🫘",c:"bg-gradient-to-br from-amber-500 to-orange-700",short:"Filters 180L makes 1.5L urine. 1M nephrons per kidney!",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-4 font-mono text-[10px] text-white'><p class='font-sans font-bold text-amber-400 tracking-widest'>NEPHRON - FUNCTIONAL UNIT</p><div class='mt-2 leading-6'>Glomerulus fenestrated → Bowman's capsule filtration barrier<br>↓ 180L/day<br>PCT 65% reabsorb brush border Na glucose amino acid<br>↓<br>Loop Henle Desc water permeable Asc Na-K-2Cl countercurrent<br>↓<br>DCT fine tuning PTH Ca Aldosterone Na<br>↓<br>Collecting duct ADH water aquaporin 2 → Urine 1.5L</div></div>",exp:"Kidney 150g bean shaped retroperitoneal cortex outer granular medulla inner pyramids pelvis collects. Functions: filter blood, regulate water electrolytes pH, BP via renin angiotensin aldosterone, RBC via EPO, Vit D activation. GFR 125ml/min 180L/day 99% reabsorbed. Juxtaglomerular apparatus macula densa senses Na JG cells renin.",pts:["GFR 125 180L filtered filtration fraction 20% barrier prevents protein proteinuria damage","PCT 65% Na water glucose amino HCO3 brush border PTH inhibits phosphate","Loop Desc water permeable concentrates Asc thick Na-K-2Cl dilutes countercurrent multiplier 1200 mOsm","DCT PTH Ca Aldosterone Na K Thiazide diuretic here","CD principal ADH aquaporin 2 water intercalated acid base ADH deficiency diabetes insipidus polyuria","JGA macula densa low Na → renin → angiotensin II vasoconstrictor aldosterone ADH BP up, Stone calcium oxalate"],trick:"GFR 125 180L 99% reabsorbed. PCT 65% Loop 25% DCT 5% CD 4% ADH water Aldosterone salt"},
+{sem:4,t:"Endocrine - Hormone Network",e:"🧠",c:"bg-gradient-to-br from-purple-500 to-violet-700",short:"Pituitary master in sella turcica. Feedback like AC thermostat!",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-4 text-white text-[10px] leading-6'><p class='font-bold text-purple-400'>HORMONE AXIS - FEEDBACK</p>Hypothalamus releasing TRH CRH GnRH GHRH → Pituitary<br>Anterior via portal: TSH → Thyroid T3 T4 metabolism ↑, ACTH → Adrenal cortisol stress, FSH LH → Gonads, GH growth, Prolactin milk<br>Posterior via nerves stores: ADH water, Oxytocin love labour milk<br><br>Negative: High T3 T4 → inhibits hypothalamus pituitary → low TSH → normal like AC off when cold<br>Positive: Oxytocin labour baby pushes → more oxytocin → more contraction till delivery</div></div>",exp:"Endocrine ductless into blood distant target via receptors. Slow long low ng/ml feedback. Pituitary master 0.5g sella turcica anterior glandular via portal posterior neural stores ADH oxytocin made hypothalamus. Thyroid T3 T4 needs iodine BMR. Parathyroid PTH raises calcium. Adrenal cortex cortisol aldosterone androgens medulla adrenaline noradrenaline emergency. Pancreas insulin glucagon. Pineal melatonin sleep.",pts:["Hypothalamus pituitary axis TRH TSH thyroid, CRH ACTH cortisol, GnRH FSH LH gonads, GHRH GH","Thyroid T3 T4 iodine tyrosine colloid follicles BMR iodine deficiency goiter hypothyroid cretinism myxedema","Adrenal cortex glomerulosa aldosterone Na water K BP fasciculata cortisol stress glucose anti inflammatory reticularis DHEA medulla adrenaline fight flight","Pancreas beta insulin lowers GLUT4 glycogen alpha glucagon raises glycogenolysis delta somatostatin","Pituitary GH excess gigantism kids acromegaly adults dwarfism ADH deficiency diabetes insipidus","Negative 99% high inhibits, Positive labour clotting LH surge ovulation"],trick:"FAST vs SLOW - Nervous fast short electric, Endocrine slow long chemical. T3 T4 need iodine"},
+{sem:4,t:"Brain - 86 Billion Neurons",e:"🧩",c:"bg-gradient-to-br from-indigo-500 to-purple-700",short:"Signal 120 m/s via myelin jumping!",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-4'><p class='text-[11px] font-bold text-indigo-400'>NEURON STRUCTURE + BRAIN LOBES</p><div class='flex gap-1 mt-3 text-[9px] text-center'><div class='bg-violet-900 border border-violet-700 p-2 rounded-xl flex-1'>Dendrite<br>Receives<br>Spines ↑ area</div><div class='flex items-center'>→</div><div class='bg-indigo-900 border border-indigo-700 p-2 rounded-xl flex-1'>Cell Body<br>Nissl RER<br>protein</div><div class='flex items-center'>→</div><div class='bg-blue-900 border border-blue-700 p-2 rounded-xl flex-1'>Axon Myelin<br>120m/s<br>Node Ranvier</div><div class='flex items-center'>→</div><div class='bg-zinc-800 p-2 rounded-xl flex-1'>Synapse<br>Ca++ NT<br>ACh Dopamine</div></div><div class='grid grid-cols-4 gap-1 mt-3 text-[8px] text-center'><div class='bg-zinc-800 p-2 rounded'>Frontal Decision Motor</div><div class='bg-zinc-800 p-2 rounded'>Parietal Sensation</div><div class='bg-zinc-800 p-2 rounded'>Temporal Hearing Memory</div><div class='bg-zinc-800 p-2 rounded'>Occipital Vision</div></div></div>",exp:"Fast electrical via neurons. CNS brain 1.4kg + spinal cord, PNS 12 cranial I Olfactory smell II Optic vision V Trigeminal face VII Facial movement VIII hearing balance X Vagus parasympathetic heart gut + 31 spinal. Myelin insulation saltatory jumping node to node 120m/s made by Oligodendrocytes CNS Schwann PNS. Neurotransmitters Glutamate excitatory GABA inhibitory ACh NMJ Dopamine reward Serotonin mood. CSF 150ml protects made choroid plexus ependyma. BBB tight junctions protects.",pts:["Multipolar most CNS Bipolar retina Unipolar dorsal root ganglion","Synapse electrical gap fast bidirectional chemical slow Ca++ vesicle NT EPSP depolarize IPSP hyperpolarize","Myelin Oligo CNS many axons Schwann PNS 1 cell 1 axon Node Ranvier Na channels saltatory 120 vs 1 unmyelinated MS demyelination","Brain frontal prefrontal decision Broca motor speech parietal somatosensory temporal auditory Wernicke memory hippocampus occipital visual cerebellum balance brainstem vital HR respiration","CSF 150ml 500ml/day choroid ventricles lateral → third Monro → fourth aqueduct → subarachnoid Luschka Magendie → arachnoid granulations cushion buoyancy nourish lumbar puncture L3-L4","ANS sympathetic thoracolumbar T1-L2 fight flight short pre long post noradrenaline ↑ HR BP dilate pupil bronchi, parasympathetic craniosacral rest digest long pre short post ACh ↓ HR constrict pupil ↑ digestion"],trick:"86B neurons! C3-5 keeps diaphragm alive phrenic nerve. 12 cranial Oh Oh Oh To Touch And Feel Very Good Velvet AH. Sympathetic fight flight"},
+{sem:5,t:"Eye & Ear - Sensory Wonders",e:"👁️",c:"bg-gradient-to-br from-cyan-400 to-blue-600 text-black",short:"Rods 120M night, Cones 6M color fovea sharpest, Stapes 3mm smallest bone!",vis:"<div class='grid grid-cols-2 gap-2 text-[9px]'><div class='bg-black border border-zinc-800 p-3 rounded-xl text-white'><p class='font-bold text-cyan-400'>EYE - 3 Layers</p><div class='mt-2 leading-5'>1. Outer Fibrous Cornea transparent avascular 2/3 focus + Sclera white tough<br>2. Middle Uvea Iris colored pupil size Ciliary makes aqueous + accommodation Choroid blood<br>3. Inner Nervous Retina 10 layers rods cones → optic nerve<br>Lens biconvex accommodation near thick far thin</div></div><div class='bg-black border border-zinc-800 p-3 rounded-xl text-white'><p class='font-bold text-cyan-400'>EAR - 3 Parts</p><div class='mt-2 leading-5'>Outer Pinna collects + Canal wax + Eardrum<br>Middle Air + 3 ossicles Malleus Incus Stapes 22x pressure + Eustachian equalizes<br>Inner Bony + Membranous labyrinth perilymph endolymph Cochlea Organ Corti hair cells sound Vestibule + Semicircular balance otoliths crista</div></div></div>",exp:"Eye focuses light inverted image on retina photoreceptors convert to electric optic nerve to occipital. Cornea 2/3 focusing avascular gets O2 from air, Lens 1/3 fine accommodation via ciliary zonules near contraction thickens far relaxation thin. Rods 120M scotopic night black-white rhodopsin, Cones 6M photopic color fovea sharpest RGB. Myopia long eyeball concave diverging, Hyperopia short convex converging, Presbyopia old stiff near loss, Astigmatism irregular cylindrical. Ear pinna collects canal amplifies eardrum vibrates ossicles amplify 22x impedance matching air fluid Eustachian equalizes Cochlea fluid waves hair cells tip links K+ depolarize auditory nerve Vestibular otoliths gravity linear semicircular angular rotation.",pts:["Eye layers fibrous cornea sclera vascular uvea iris ciliary choroid nervous retina 10 layers rods 120M rhodopsin bleaching cones 6M S blue M green L red fovea centralis highest cones sharpest avascular blind spot optic disc","Accommodation ciliary contracts zonules relax lens thickens near sympathetic dilates pupil para constricts aqueous made ciliary drains trabecular Schlemm block glaucoma high IOP damages optic","Refractive myopia long image front retina concave minus hyperopia short behind convex plus astigmatism irregular cylindrical presbyopia old stiff near convex","Ear outer pinna helix antihelix canal 2.5cm S-shaped wax cerumen tympanic 3 layers middle air ossicles malleus incus stapes smallest 3mm amplifies 22x Eustachian nasopharynx inner bony perilymph Na membranous endolymph K","Cochlea 2.5 turns scala vestibuli tympani perilymph media endolymph Organ Corti basilar hair inner 1 row 95% afferent outer 3 rows amplifier tonotopy base high apex low 20Hz-20kHz vestibule utricle saccule otoliths linear semicircular crista angular","Cataract lens opaque IOL glaucoma high IOP optic damage otitis media middle infection kids eustachian horizontal deafness conductive wax ossicle vs sensorineural hair cell nerve Rinne Weber"],trick:"Myopia Minus concave, Hyperopia Plus convex. Stapes smallest 3mm Malleus Incus Stapes amplify 22x"},
+{sem:5,t:"Reproductive - Life Continues",e:"👶",c:"bg-gradient-to-br from-fuchsia-500 to-pink-600",short:"Sperm daily 200M, egg monthly, fertilization in ampulla!",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-4 text-[10px]'><p class='font-bold text-fuchsia-400'>FEMALE CYCLE 28 DAYS - MOST FERTILE 12-16</p><div class='grid grid-cols-4 gap-1 mt-3 text-center text-[9px]'><div class='bg-red-950/50 border border-red-800 p-2 rounded-xl'><b>Day 1-5</b><br>Mens<br>Endo sheds<br>Estro Prog low<br>FSH ↑</div><div class='bg-orange-950/50 border border-orange-800 p-2 rounded-xl'><b>Day 6-13</b><br>Follicular<br>Follicle grows<br>Estrogen ↑<br>Proliferates</div><div class='bg-green-950/50 border border-green-800 p-2 rounded-xl'><b>Day 14</b><br>Ovulation<br>LH surge<br>Egg release<br>Temp ↑ 0.5C</div><div class='bg-purple-950/50 border border-purple-800 p-2 rounded-xl'><b>Day 15-28</b><br>Luteal<br>Corpus luteum<br>Prog ↑<br>Secretory</div></div></div>",exp:"Reproduction continuation species. Male testes scrotum 2-3C cooler spermatogenesis seminiferous tubules Sertoli nurse support inhibin Leydig interstitial testosterone male features sperm libido epididymis stores matures vas deferens seminal vesicle 60% fructose prostate 30% milky alkaline bulbourethral mucus. Female ovary egg estrogen progesterone follicle primordial primary secondary antrum Graafian ovulation day14 LH surge corpus luteum progesterone if no pregnancy albicans. Fallopian tube fertilization ampulla cilia peristalsis. Uterus 3 layers perimetrium myometrium endometrium cycles. Cervix mucus thin watery ovulation facilitates sperm. Puberty 10-14 GnRH hypothalamus FSH LH.",pts:["Spermatogenesis 64 days spermatogonia mitosis primary meiosis I secondary meiosis II spermatids spermiogenesis sperm Sertoli nurse blood testis barrier inhibin inhibits FSH Leydig LH testosterone secondary sexual beard muscle voice sperm libido","Semen seminal 60% fructose prostaglandin prostate 30% milky alkaline PSA bulbourethral 5% mucus count 60-150M/ml motility >50% morphology >30% daily 200M","Female follicular FSH follicles estrogen endometrium proliferates ovulation LH surge day14 secondary oocyte metaphase II luteal corpus luteum progesterone secretory if no hCG degenerates menses most fertile 12-16","Estrogen female features breast hips endometrial proliferation LH surge positive feedback mid-cycle bone protection progesterone secretory maintains pregnancy thermogenic temp ↑ 0.5C inhibits contraction","Fertilization capacitation removes glycoprotein acrosome hyaluronidase acrosin corona radiata zona 1 sperm cortical reaction prevents polyspermy secondary completes meiosis II implantation day6-7 blastocyst trophoblast hCG maintains corpus luteum","Placenta fetal maternal nutrition respiration O2 CO2 excretion endocrine hCG progesterone estrogen hPL barrier IgG passes alcohol drugs virus pass puberty GnRH pulse FSH LH sex hormones secondary"],trick:"Sperm daily egg monthly Fertilization ampulla Ovulation day14 LH surge Cycle Menstruation Follicular Ovulation Luteal Most fertile 12-16"},
+{sem:6,t:"Homeostasis - Body Balance",e:"⚡",c:"bg-gradient-to-br from-lime-400 to-green-600 text-black",short:"Keeps BP 120/80 Sugar 80-100 Temp 37C pH 7.4 constant!",vis:"<div class='bg-black border border-zinc-800 rounded-2xl p-4 text-white text-[10px]'><p class='font-bold text-lime-400'>HOMEOSTASIS - FEEDBACK EXAMPLES</p><div class='mt-3 space-y-2'><div class='bg-zinc-800 p-3 rounded-xl'><b>BP:</b> ↑160 → Baroreceptors carotid aortic stretch → Vagus → Medulla → ↓Symp ↓HR vasodilation → BP back 120/80 (seconds)</div><div class='bg-zinc-800 p-3 rounded-xl'><b>Sugar:</b> ↑200 after meal → Beta pancreas → Insulin → GLUT4 → Glucose into muscle fat glycogen → back 90 (minutes)</div><div class='bg-zinc-800 p-3 rounded-xl'><b>Temp:</b> ↓35C → Hypothalamus → Shivering heat + Vasoconstriction + T3 T4 ↑ BMR → back 37C</div></div></div>",exp:"Homeostasis = maintaining constant internal environment despite external changes Claude Bernard concept. All systems work together keep BP sugar temp pH electrolytes constant via negative feedback most brings back normal positive amplifies until endpoint labour clotting LH surge. Baroreceptor short seconds Renin angiotensin aldosterone long hours days Insulin glucagon sugar Calcium PTH calcitonin vit D Temperature hypothalamus pH lungs kidneys buffer. Applied physiology disease when fails.",pts:["Homeostasis maintenance constant internal BP 120/80 HR 60-100 Sugar fasting 80-100 post <140 Temp 37C pH 7.4 Na 135-145 K 3.5-5 Ca 9-11 via feedback","Negative high inhibits axis bringing back normal e.g. High BP baroreceptor low HR normal High sugar insulin low sugar normal 99%","Positive change amplifies more e.g. Labour baby pushes cervix oxytocin more contraction more pushing till delivery Clotting platelet plug more platelets LH surge estrogen high more LH ovulation endpoint","BP regulation short term baroreceptor seconds carotid aortic medulla autonomic intermediate chemoreceptor CNS ischemic long term kidney renin angiotensin aldosterone ADH volume endothelial NO vasodilator endothelin vasoconstrictor","Applied HTN >140/90 primary 95% lifestyle salt obesity stress secondary kidney renal artery stenosis complications stroke MI CKD retinopathy Treatment less salt exercise ACE inhibitor Diabetes Type1 autoimmune no insulin kids DKA Type2 resistant adult HHS retinopathy nephropathy neuropathy foot ulcer","Shock Low BP inadequate perfusion hypovolemic blood loss cardiogenic MI pump failure obstructive PE tension pneumo distributive septic anaphylactic neurogenic vasodilation cold clammy tachycardia oliguria fluids vasopressors Fever ↑ set point pyrogens IL-1 prostaglandin Acidosis pH <7.35 alkalosis >7.45 buffer bicarbonate 24"],trick:"HOMEO Same + Stasis standing. Negative 99% like thermostat brings back, Positive amplifies till endpoint like labour. HTN silent killer >140/90 Diabetes >126 fasting"},
 ];
 
-var myId=localStorage.getItem('myId')||Math.random().toString(36).substring(2,8);
-localStorage.setItem('myId',myId);
-var myNick=localStorage.getItem('nick')||"";
-var selectedFriend=null;
-var currentSem='all';
+function showTab(t){
+ document.getElementById('tab-learn').classList.add('hidden');
+ document.getElementById('tab-quiz').classList.add('hidden');
+ document.getElementById('tab-flash').classList.add('hidden');
+ document.getElementById('tab-friends').classList.add('hidden');
+ document.getElementById('tab-chat').classList.add('hidden');
+ document.getElementById('tab-settings').classList.add('hidden');
+ document.getElementById('tab-'+t).classList.remove('hidden');
+ ['learn','quiz','flash','friends','chat','settings'].forEach(x=>{
+  var b=document.getElementById('b-'+x);
+  if(b) b.className = (x===t)?"bg-white text-black px-5 py-2 rounded-full text-sm font-bold":"bg-zinc-800 px-5 py-2 rounded-full text-sm";
+ });
+ window.scrollTo(0,0);
+}
+function filterS(s){
+ curSem=s;
+ ['all','1','2','3','4','5','6'].forEach(x=>{
+  var b=document.getElementById('f-'+x);
+  if(b) b.className = (x===s)?"bg-violet-600 px-4 py-1.5 rounded-full text-xs font-bold":"bg-zinc-800 px-4 py-1.5 rounded-full text-xs";
+ });
+ render();
+}
+function render(){
+ var list = curSem==='all'?chapters:chapters.filter(c=>c.sem==curSem);
+ document.getElementById('grid').innerHTML = list.map(c=>{
+  var idx = chapters.indexOf(c);
+  return `<div onclick="openC(${idx})" class="bg-zinc-900 border border-zinc-800 p-4 rounded-[20px] cursor-pointer hover:border-zinc-700 transition">
+   <div class="flex gap-3"><div class="w-12 h-12 rounded-xl ${c.c} flex items-center justify-center text-xl shrink-0">${c.e}</div>
+   <div class="flex-1"><div class="flex gap-2 items-center"><span class="text-[9px] bg-zinc-800 px-2 py-0.5 rounded-full text-zinc-400">SEM ${c.sem}</span><span class="text-[9px] bg-violet-900/30 border border-violet-800 px-2 py-0.5 rounded-full text-violet-300">Visual + Fun</span></div>
+   <p class="font-bold text-[14px] mt-1 leading-5">${c.t}</p><p class="text-xs text-zinc-400 mt-1 leading-5">${c.short}</p></div></div></div>`;
+ }).join('');
+}
+render();
+
+function openC(i){
+ var c=chapters[i];
+ document.getElementById('mContent').innerHTML = `
+ <div class="flex gap-3 items-center"><div class="w-14 h-14 ${c.c} rounded-2xl flex items-center justify-center text-2xl">${c.e}</div><div><h2 class="text-xl font-bold leading-6">${c.t}</h2><p class="text-xs text-zinc-500 mt-1">Semester ${c.sem} • Deep Visual • Fun + Informative</p></div></div>
+ <div class="mt-6">${c.vis}</div>
+ <div class="mt-6"><p class="font-bold">📘 Easy Explanation (Fun):</p><p class="text-sm text-zinc-300 mt-2 leading-7">${c.exp}</p></div>
+ <div class="mt-6"><p class="font-bold text-sm">🎯 6 High-Yield Points:</p><div class="mt-3 space-y-2">${c.pts.map(p=>`<div class="bg-zinc-800 border border-zinc-700 p-3 rounded-xl text-sm leading-6">• ${p}</div>`).join('')}</div></div>
+ <div class="mt-6 grid grid-cols-2 gap-3">
+ <div class="bg-violet-900/20 border border-violet-800 p-4 rounded-2xl"><p class="text-[11px] font-bold text-violet-400">💡 Trick</p><p class="text-sm mt-2 leading-5">${c.trick}</p></div>
+ <div class="bg-yellow-900/20 border border-yellow-800 p-4 rounded-2xl"><p class="text-[11px] font-bold text-yellow-400">🤩 Fun Fact</p><p class="text-sm mt-2 leading-5">${c.short}</p></div>
+ </div>
+ <div class="mt-6 p-4 bg-zinc-800 rounded-2xl"><p class="text-xs font-bold">⚠️ Clinical</p><p class="text-xs text-zinc-400 mt-2 leading-5">${c.pts[c.pts.length-1]}</p></div>
+ `;
+ document.getElementById('modal').style.display='block';
+}
+
 var qi=0;
+function renderQuiz(){
+ var c=chapters[qi];
+ document.getElementById('quizBox').innerHTML = `<p class="text-xs text-zinc-500 font-bold">Q ${qi+1}/${chapters.length} • ${c.t}</p><p class="font-bold mt-3 text-[16px]">Which is TRUE about ${c.t}?</p><div class="mt-5 space-y-3"><button onclick="checkQ(true)" class="w-full text-left bg-zinc-800 border border-zinc-700 p-4 rounded-xl text-sm hover:bg-zinc-700">✅ ${c.pts[0]}</button><button onclick="checkQ(false)" class="w-full text-left bg-zinc-800 border border-zinc-700 p-4 rounded-xl text-sm hover:bg-zinc-700">❌ No function vestigial</button><button onclick="checkQ(false)" class="w-full text-left bg-zinc-800 border border-zinc-700 p-4 rounded-xl text-sm hover:bg-zinc-700">❌ Only in plants</button></div><div class="mt-6 flex gap-2"><button onclick="qi=(qi-1+chapters.length)%chapters.length;renderQuiz()" class="bg-zinc-800 px-5 py-2 rounded-full text-xs">Prev</button><button onclick="qi=(qi+1)%chapters.length;renderQuiz()" class="bg-white text-black px-5 py-2 rounded-full text-xs font-bold">Next</button></div><p class="text-[11px] text-zinc-500 mt-4">Hint: ${c.trick}</p>`;
+}
+function checkQ(ok){ alert(ok?'✅ Correct! Great!':'❌ Wrong - read chapter again'); if(ok){ qi=(qi+1)%chapters.length; renderQuiz(); } }
+renderQuiz();
 
-function init(){
- document.getElementById('myIdShow').innerHTML=myId;
-  document.getElementById('nickShow').innerHTML=myNick?"Nickname: <b class='text-violet-400'>"+myNick+"</b>":"No nickname - anonymous: "+myId;
-   document.getElementById('headSub').innerHTML=myNick?"Hi "+myNick+" • Tap any chapter":"Sem 1-6 • Tap any chapter • Set nickname in Settings optional";
-    document.getElementById('qrLabel').innerHTML="QR = "+(myNick||myId);
-     document.getElementById('nickInput').value=myNick;
-      try{ document.getElementById('myQr').innerHTML=""; new QRCode(document.getElementById('myQr'),{text:myNick||myId,width:110,height:110}); }catch(e){}
-       renderGrid();
-        renderQuiz();
-         renderFlash();
-          renderFriends();
-           renderGroups();
-            renderPrivateList();
-            }
-            init();
+function renderFlash(){
+ document.getElementById('flashBox').innerHTML = chapters.map(c=>`<div onclick="this.querySelector('.ans').classList.toggle('hidden')" class="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 cursor-pointer hover:border-zinc-700"><p class="font-bold text-sm">${c.e} ${c.t}</p><p class="text-xs text-zinc-500 mt-1">Tap to reveal • ${c.trick}</p><div class="ans hidden mt-3 bg-violet-600 p-3 rounded-xl text-sm">${c.pts[0]}<br><br><span class="text-[11px] opacity-80">${c.exp.slice(0,180)}...</span></div></div>`).join('');
+}
+renderFlash();
 
-            function showTab(tab){
-             document.querySelectorAll('.tab').forEach(function(t){t.classList.add('hidden');});
-              document.getElementById('tab-'+tab).classList.remove('hidden');
-               document.querySelectorAll('.tabBtn').forEach(function(b){b.className="tabBtn bg-zinc-800 px-4 py-2 rounded-full text-sm";});
-                var btn=document.getElementById('btn-'+tab); if(btn) btn.className="tabBtn bg-white text-black px-4 py-2 rounded-full text-sm font-bold";
-                 window.scrollTo(0,0);
-                 }
+function saveN(){
+ var n=document.getElementById('nInput').value.trim().toLowerCase().replace(/\s/g,'');
+ if(n && n.length<3){ alert('Min 3 letters'); return; }
+ myNick=n; localStorage.setItem('nick',myNick);
+ document.getElementById('idShow').innerHTML = 'ID: '+myId+'<br>'+(myNick?'Nickname: <b class="text-violet-400">'+myNick+'</b>':'No nickname - anonymous');
+ alert(n?'Saved: '+n:'Removed nickname');
+}
+document.getElementById('idShow').innerHTML = 'ID: '+myId+'<br>'+(myNick?'Nickname: '+myNick:'No nickname set');
+document.getElementById('nInput').value = myNick;
 
-                 function filterSem(sem){
-                  currentSem=sem;
-                   document.querySelectorAll('.sBtn').forEach(function(b){b.className="sBtn bg-zinc-800 px-3 py-1 rounded-full text-xs";});
-                    document.getElementById('s-'+sem).className="sBtn bg-violet-600 px-3 py-1 rounded-full text-xs font-bold";
-                     renderGrid();
-                     }
+function addF(){
+ var n=document.getElementById('sInput').value.trim().toLowerCase();
+ if(!n){ alert('Type nickname'); return; }
+ var list=JSON.parse(localStorage.getItem('friends')||'[]');
+ if(list.find(f=>f.nickname===n)){ alert('Already added'); return; }
+ list.push({uid:'id_'+n,nickname:n});
+ localStorage.setItem('friends',JSON.stringify(list));
+ document.getElementById('sInput').value='';
+ renderF();
+}
+function renderF(){
+ var list=JSON.parse(localStorage.getItem('friends')||'[]');
+ document.getElementById('fList').innerHTML = list.length?list.map(f=>`<div class="flex justify-between items-center bg-zinc-800 p-3 rounded-xl mb-2"><span class="font-bold text-sm">${f.nickname}</span><button onclick="openP('${f.uid}','${f.nickname}')" class="bg-violet-600 px-3 py-1 rounded-full text-xs font-bold">Chat</button></div>`).join(''):'<p class="text-zinc-500">No friends yet. Add any nickname (offline works)</p>';
+}
+renderF();
 
-                     function renderGrid(){
-                      var list=currentSem==='all'?chapters:chapters.filter(function(c){return c.sem==currentSem;});
-                       document.getElementById('grid').innerHTML=list.map(function(c){
-                         var idx=chapters.indexOf(c);
-                           return "<div onclick='openC("+idx+")' class='bg-zinc-900 border border-zinc-800 p-4 rounded-2xl cursor-pointer hover:border-zinc-600'><div class='flex gap-3'><div class='w-11 h-11 rounded-xl "+c.c+" flex items-center justify-center text-lg shrink-0'>"+c.e+"</div><div class='flex-1'><p class='text-[10px] text-zinc-500 font-bold'>SEM "+c.sem+"</p><p class='font-bold text-sm mt-1'>"+c.t+"</p><p class='text-xs text-zinc-400 mt-1'>"+c.short+"</p></div></div></div>";
-                            }).join('');
-                            }
+function sendG(){
+ var t=document.getElementById('gInput').value.trim(); if(!t) return;
+ var arr=JSON.parse(localStorage.getItem('gMsgs')||'[]');
+ arr.push({nick:myNick||myId,text:t});
+ localStorage.setItem('gMsgs',JSON.stringify(arr));
+ document.getElementById('gInput').value='';
+ renderG();
+}
+function renderG(){
+ var arr=JSON.parse(localStorage.getItem('gMsgs')||'[]');
+ document.getElementById('gMsgs').innerHTML = arr.length?arr.map(m=>`<div><b class="text-violet-400">${m.nick}:</b> ${m.text}</div>`).join(''):'<p class="text-zinc-600 text-xs">No messages yet. Start discussion!</p>';
+ document.getElementById('gMsgs').scrollTop = document.getElementById('gMsgs').scrollHeight;
+}
+renderG();
 
-                            function openC(i){
-                             var c=chapters[i];
-                              document.getElementById('modalContent').innerHTML=
-                               "<div class='flex gap-3'><div class='w-14 h-14 "+c.c+" rounded-2xl flex items-center justify-center text-2xl'>"+c.e+"</div><div><h2 class='text-xl font-bold'>"+c.t+"</h2><p class='text-xs text-zinc-500'>Sem "+c.sem+" • Visual Deep</p></div></div>"+
-                                "<div class='mt-5'>"+c.vis+"</div>"+
-                                 "<div class='mt-5'><p class='font-bold'>Easy Explanation:</p><p class='text-sm text-zinc-300 mt-2 leading-6'>"+c.exp+"</p></div>"+
-                                  "<div class='mt-5 space-y-2'>"+c.pts.map(function(p){return "<div class='bg-zinc-800 border border-zinc-700 p-3 rounded-xl text-sm'>• "+p+"</div>";}).join('')+"</div>"+
-                                   "<div class='mt-5 p-3 bg-violet-900/20 border border-violet-800 rounded-xl text-xs'>💡 Remember: "+c.short+"</div>";
-                                    document.getElementById('modal').classList.remove('hidden');
-                                    }
-
-                                    function renderQuiz(){
-                                     var c=chapters[qi];
-                                      document.getElementById('quizBox').innerHTML=
-                                       "<p class='text-xs text-zinc-500'>Q "+(qi+1)+"/"+chapters.length+" • Sem "+c.sem+" • "+c.t+"</p>"+
-                                        "<p class='font-bold mt-3'>Which is TRUE about "+c.t+"?</p>"+
-                                         "<div class='mt-4 space-y-2'>"+
-                                          "<button onclick='checkQ(true)' class='w-full text-left bg-zinc-800 hover:bg-zinc-700 p-3 rounded-xl text-sm'>✅ "+c.pts[0]+"</button>"+
-                                           "<button onclick='checkQ(false)' class='w-full text-left bg-zinc-800 hover:bg-zinc-700 p-3 rounded-xl text-sm'>❌ No function vestigial</button>"+
-                                            "<button onclick='checkQ(false)' class='w-full text-left bg-zinc-800 hover:bg-zinc-700 p-3 rounded-xl text-sm'>❌ Only in plants</button>"+
-                                             "</div>"+
-                                              "<div class='mt-4 flex gap-2'><button onclick='prevQ()' class='bg-zinc-800 px-4 py-2 rounded-full text-xs'>Prev</button><button onclick='nextQ()' class='bg-zinc-800 px-4 py-2 rounded-full text-xs'>Next</button></div>";
-                                              }
-                                              function checkQ(ok){ alert(ok?"✅ Correct! 🎉":"❌ Wrong, try again!"); if(ok) nextQ(); }
-                                              function nextQ(){ qi=(qi+1)%chapters.length; renderQuiz(); }
-                                              function prevQ(){ qi=(qi-1+chapters.length)%chapters.length; renderQuiz(); }
-
-                                              function renderFlash(){
-                                               document.getElementById('flashBox').innerHTML=chapters.map(function(c){
-                                                 return "<div onclick=\"this.querySelector('.ans').classList.toggle('hidden')\" class='bg-zinc-900 border border-zinc-800 rounded-2xl p-4 cursor-pointer'><p class='font-bold text-sm'>"+c.e+" "+c.t+"</p><p class='text-xs text-zinc-500 mt-1'>Tap to reveal</p><div class='ans hidden mt-3 bg-violet-600 p-3 rounded-xl text-sm'>"+c.pts[0]+"<br><br><span class='text-[11px] opacity-80'>"+c.exp+"</span></div></div>";
-                                                  }).join('');
-                                                  }
-
-                                                  function saveNick(){
-                                                   var n=document.getElementById('nickInput').value.trim().toLowerCase().replace(/\s/g,'');
-                                                    if(n && n.length<3){ alert("Min 3 letters"); return; }
-                                                     myNick=n;
-                                                      localStorage.setItem('nick',myNick);
-                                                       init();
-                                                        alert(n?"Saved nickname: "+n:"Removed nickname, now anonymous");
-                                                        }
-
-                                                        function addBySearch(){
-                                                         var n=document.getElementById('searchInput').value.trim().toLowerCase();
-                                                          if(!n){ alert("Type nickname"); return; }
-                                                           if(n===myNick || n===myId){ alert("That's you!"); return; }
-                                                            var friends=JSON.parse(localStorage.getItem('friends')||"[]");
-                                                             if(friends.find(function(f){return f.nickname===n;})){ alert("Already added"); return; }
-                                                              friends.push({uid:"id_"+n,nickname:n});
-                                                               localStorage.setItem('friends',JSON.stringify(friends));
-                                                                document.getElementById('searchInput').value="";
-                                                                 renderFriends();
-                                                                  alert("Added friend: "+n);
-                                                                  }
-
-                                                                  function renderFriends(){
-                                                                   var friends=JSON.parse(localStorage.getItem('friends')||"[]");
-                                                                    var list=document.getElementById('friendsList');
-                                                                     if(friends.length===0){ list.innerHTML="<p class='text-xs text-zinc-500'>No friends yet. Type nickname above and Add, or Scan QR.</p>"; return; }
-                                                                      list.innerHTML=friends.map(function(f){
-                                                                        return "<div class='flex justify-between items-center bg-zinc-800 p-3 rounded-xl mb-2'><div><p class='text-sm font-bold'>"+f.nickname+"</p><p class='text-[10px] text-zinc-500'>"+f.uid+"</p></div><div class='flex gap-2'><button onclick=\"openPrivate('"+f.uid+"','"+f.nickname+"')\" class='bg-violet-600 px-3 py-1 rounded-full text-xs font-bold'>Chat</button><button onclick=\"removeFriend('"+f.uid+"')\" class='bg-zinc-700 px-2 py-1 rounded-full text-xs'>X</button></div></div>";
-                                                                         }).join('');
-                                                                         }
-                                                                         function removeFriend(uid){
-                                                                          var friends=JSON.parse(localStorage.getItem('friends')||"[]").filter(function(f){return f.uid!==uid;});
-                                                                           localStorage.setItem('friends',JSON.stringify(friends));
-                                                                            renderFriends();
-                                                                            }
-
-                                                                            function startScan(){
-                                                                             document.getElementById('reader').classList.remove('hidden');
-                                                                              var html5QrCode=new Html5Qrcode("reader");
-                                                                               html5QrCode.start({facingMode:"environment"},{fps:10,qrbox:250},function(decoded){
-                                                                                 html5QrCode.stop();
-                                                                                   document.getElementById('reader').classList.add('hidden');
-                                                                                     document.getElementById('searchInput').value=decoded;
-                                                                                       addBySearch();
-                                                                                        },function(){});
-                                                                                        }
-
-                                                                                        function sendGroup(){
-                                                                                         var t=document.getElementById('groupInput').value.trim(); if(!t) return;
-                                                                                          var arr=JSON.parse(localStorage.getItem('groupMsgs')||"[]");
-                                                                                           arr.push({nick:myNick||myId,text:t,time:Date.now()});
-                                                                                            localStorage.setItem('groupMsgs',JSON.stringify(arr));
-                                                                                             document.getElementById('groupInput').value="";
-                                                                                              renderGroups();
-                                                                                              }
-                                                                                              function renderGroups(){
-                                                                                               var arr=JSON.parse(localStorage.getItem('groupMsgs')||"[]");
-                                                                                                var box=document.getElementById('groupMsgs');
-                                                                                                 box.innerHTML=arr.map(function(m){return "<div><b class='text-violet-400'>"+m.nick+":</b> "+m.text+"</div>";}).join('') || "<p class='text-zinc-600 text-xs'>No messages yet. Say hi!</p>";
-                                                                                                  box.scrollTop=box.scrollHeight;
-                                                                                                  }
-
-                                                                                                  function openPrivate(uid,nick){
-                                                                                                   selectedFriend=uid;
-                                                                                                    document.getElementById('privateWith').innerHTML=nick;
-                                                                                                     renderPrivateList();
-                                                                                                      showTab('chat');
-                                                                                                      }
-                                                                                                      function sendPrivate(){
-                                                                                                       if(!selectedFriend){ alert("Select friend from Friends tab first"); return; }
-                                                                                                        var t=document.getElementById('privateInput').value.trim(); if(!t) return;
-                                                                                                         var key="chat_"+[myId,selectedFriend].sort().join('_');
-                                                                                                          var arr=JSON.parse(localStorage.getItem(key)||"[]");
-                                                                                                           arr.push({from:myId,text:t,time:Date.now()});
-                                                                                                            localStorage.setItem(key,JSON.stringify(arr));
-                                                                                                             document.getElementById('privateInput').value="";
-                                                                                                              renderPrivateList();
-                                                                                                              }
-                                                                                                              function renderPrivateList(){
-                                                                                                               if(!selectedFriend) return;
-                                                                                                                var key="chat_"+[myId,selectedFriend].sort().join('_');
-                                                                                                                 var arr=JSON.parse(localStorage.getItem(key)||"[]");
-                                                                                                                  var box=document.getElementById('privateMsgs');
-                                                                                                                   box.innerHTML=arr.map(function(m){ var me=m.from===myId; return "<div class='"+(me?"text-right":"")+"'><span class='inline-block px-3 py-1.5 rounded-xl text-xs "+(me?"bg-violet-600":"bg-zinc-800")+"'>"+m.text+"</span></div>";}).join('') || "<p class='text-zinc-600 text-xs'>No messages yet with "+selectedFriend+"</p>";
-                                                                                                                    box.scrollTop=box.scrollHeight;
-                                                                                                                    }
-                                                                                                                    </script>
-                                                                                                                    </body>
-                                                                                                                    </html>
+function openP(uid,nick){ selFriend=uid; document.getElementById('pWith').innerHTML=nick; renderP(); showTab('chat'); }
+function sendP(){
+ if(!selFriend){ alert('Select friend in Friends tab'); return; }
+ var t=document.getElementById('pInput').value.trim(); if(!t) return;
+ var key='chat_'+[myId,selFriend].sort().join('_');
+ var arr=JSON.parse(localStorage.getItem(key)||'[]');
+ arr.push({from:myId,text:t});
+ localStorage.setItem(key,JSON.stringify(arr));
+ document.getElementById('pInput').value='';
+ renderP();
+}
+function renderP(){
+ if(!selFriend) return;
+ var key='chat_'+[myId,selFriend].sort().join('_');
+ var arr=JSON.parse(localStorage.getItem(key)||'[]');
+ document.getElementById('pMsgs').innerHTML = arr.map(m=>`<div class="${m.from===myId?'text-right':''}"><span class="inline-block px-3 py-1.5 rounded-xl text-xs ${m.from===myId?'bg-violet-600':'bg-zinc-800'}">${m.text}</span></div>`).join('') || '<p class="text-zinc-600 text-xs">No messages</p>';
+ document.getElementById('pMsgs').scrollTop = document.getElementById('pMsgs').scrollHeight;
+}
+</script>
+</body>
+ </html>
